@@ -20,9 +20,12 @@ public class Car {
     public void addPassenger(Passenger p){
         if (this.passengersOnboard.contains(p)){
             throw new RuntimeException("Passenger already on board.");
+        } else if(this.seatsRemaining() == 0){
+            throw new RuntimeException("No seats Remaining");
         } else {
             this.passengersOnboard.add(p);
         }
+       
     }
 
     public void removePassenger(Passenger p){
